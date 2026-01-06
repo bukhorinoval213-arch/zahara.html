@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Happy 2nd Anniversary 🤍</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #ffe6f0, #fff);
+  color: #444;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 500px;
+  margin: auto;
+  background: rgba(255,255,255,0.85);
+  border-radius: 24px;
+  padding: 35px 25px;
+  box-shadow: 0 20px 40px rgba(255, 182, 193, 0.35);
+}
+
+h1 {
+  color: #e75480;
+  font-weight: 600;
+}
+
+.name {
+  font-size: 18px;
+  margin-top: -10px;
+  color: #b23a62;
+}
+
+.heart {
+  font-size: 40px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.counter {
+  margin: 25px 0;
+  font-size: 16px;
+  background: #ffe6f0;
+  padding: 15px;
+  border-radius: 16px;
+}
+
+button {
+  margin-top: 20px;
+  background: #e75480;
+  border: none;
+  padding: 14px 26px;
+  border-radius: 30px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #d6436c;
+}
+
+.message {
+  display: none;
+  margin-top: 25px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+footer {
+  margin-top: 30px;
+  font-size: 12px;
+  color: #aaa;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="heart">🤍</div>
+
+  <h1>Happy 2nd Anniversary</h1>
+  <div class="name">Gzahara Gifta Isvara</div>
+
+  <div class="counter" id="counter">
+    Menghitung hari kita...
+  </div>
+
+  <button onclick="showMessage()">Klik aku 🤍</button>
+
+  <div class="message" id="message">
+    Terima kasih sudah bertahan sejauh ini bersamaku.  
+    Dua tahun dengan jarak, rindu, dan sabar yang nggak sedikit.  
+    Tapi kamu tetap jadi orang yang selalu aku pilih.  
+    <br><br>
+    Semoga di tahun ke-3 nanti, jarak cuma jadi cerita,  
+    dan aku masih bisa menggenggam tangan yang sama.  
+    <br><br>
+    Aku sayang kamu 🤍
+  </div>
+
+  <footer>
+    7 Januari — Selamanya
+  </footer>
+</div>
+
+<!-- 🎶 Musik Otomatis -->
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function showMessage() {
+  document.getElementById("message").style.display = "block";
+}
+
+// ⏳ Hitungan hari pacaran
+const startDate = new Date("2024-01-07");
+const today = new Date();
+const diffTime = today - startDate;
+
+const days = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+const months = Math.floor(days / 30);
+const years = Math.floor(days / 365);
+
+document.getElementById("counter").innerHTML = `
+  Kita sudah bersama selama<br>
+  <b>${years}</b> tahun, <b>${months % 12}</b> bulan,<br>
+  dan <b>${days}</b> hari 🤍
+`;
+</script>
+
+</body>
+</html>
